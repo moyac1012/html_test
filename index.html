@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOリスト</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>TODOリスト</h1>
+    <div id="todo-container">
+        <input type="text" id="new-task" placeholder="新しいタスクを追加...">
+        <button onclick="addTask()">追加</button>
+        <ul id="task-list">
+            <!-- タスクがここに追加されます -->
+        </ul>
+    </div>
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById('new-task');
+            const taskValue = taskInput.value.trim();
+
+            if (taskValue !== '') {
+                const taskList = document.getElementById('task-list');
+                const listItem = document.createElement('li');
+
+                const taskText = document.createElement('span');
+                taskText.textContent = taskValue;
+                listItem.appendChild(taskText);
+
+                const editButton = document.createElement('button');
+                editButton.textContent = '編集';
+                editButton.onclick = function() {
+                    const newTaskValue = prompt('タスクを編集:', taskText.textContent);
+                    if (newTaskValue !== null && newTaskValue.trim() !== '') {
+                        taskText.textContent = newTaskValue.trim();
+                    }
+                };
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = '削除';
+                deleteButton.onclick = function() {
+                    taskList.removeChild(listItem);
+                };
+
+                listItem.appendChild(editButton);
+                listItem.appendChild(deleteButton);
+                taskList.appendChild(listItem);
+                taskInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
