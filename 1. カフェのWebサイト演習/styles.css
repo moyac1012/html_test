@@ -1,0 +1,87 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8f0;
+}
+
+/* ヘッダー */
+.header {
+    background-color: #6d4c41;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: fixed; ヘッダーを固定 */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 150px;
+}
+
+.nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* メインセクション */
+.main {
+    padding: 100px 20px 20px; /* ヘッダーの高さ分のパディングを追加 */
+}
+
+.section {
+    margin-bottom: 60px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: #6d4c41;
+    margin-bottom: 15px;
+}
+
+.section p {
+    line-height: 1.6;
+}
+
+.section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.section-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+/* フッター */
+.footer {
+    background-color: #6d4c41;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* スムーズスクロール */
+html {
+    scroll-behavior: smooth;
+}
